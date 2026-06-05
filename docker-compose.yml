@@ -3,7 +3,7 @@ services:
   db-webdinamis:
     image: mariadb:lts
     environment:
-      MARIADB_ROOT_PASSWORD: Admin@7419
+      MARIADB_ROOT_PASSWORD: Admin@9419
       MARIADB_DATABASE: dbcompro_2388010009
       MARIADB_USER: userwebdinamis_2388010009
       MARIADB_PASSWORD: usrcompro_2388010009
@@ -18,7 +18,7 @@ services:
       retries: 5
       start_period: 30s
     networks:
-      - uasnet
+      - appnet
 
   container-statis:
     image: reviinjani/uas_statis_2388010009:latest
@@ -26,7 +26,7 @@ services:
       - "80:80"
     restart: always
     networks:
-      - uasnet
+      - appnet
 
   container-dinamis:
     image: reviinjani/uas_dinamis_2388010009:latest
@@ -45,11 +45,11 @@ services:
       db-webdinamis:
         condition: service_healthy
     networks:
-      - uasnet
+      - appnet
 
 volumes:
   db_data: {}
 
 networks:
-  uasnet:
+  appnet:
     driver: bridge
