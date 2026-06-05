@@ -1,19 +1,16 @@
-# Build stage (optional untuk gzip optimization)
-FROM node:24-alpine AS builder
-WORKDIR /app
-COPY package*.json .
-RUN npm install
-COPY . .
-RUN npm run build 2>/dev/null || true
-
 # Production stage - Nginx
 FROM nginx:alpine
 
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy static files
+# Copy semua file statis
 COPY . /usr/share/nginx/html/
+
+# --- TAMBAHKAN BARIS INI UNTUK MEMPERBAIKI PERMISSION ---
+# Memberikan izin baca (read) ke semua user untuk folder html
+RUN chmod -R 755 /usr/share/nginx/html && chmod -R 644 /usr/share/nginx/html/*
+# --------------------------------------------------------
 
 # Remove any build artifacts if they exist
 RUN rm -f /usr/share/nginx/html/Dockerfile /usr/share/nginx/html/nginx.conf 2>/dev/null || true
