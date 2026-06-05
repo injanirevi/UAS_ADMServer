@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Insert default admin (password: admin123)
 -- bcrypt hash of 'admin123' is usually something like '$2y$10$...'
 -- Note: Replace with actual bcrypt hash used in your app if different,
--- For NextAuth with bcrypt, '$2a$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa' is 'admin123'
+-- For NextAuth with bcrypt, '$2b$10$Obm76WAQNikogTY3qOKxi.JZxvRyqvxV/dzR.2GTtUZxzssIi1a5m' is 'admin123'
 INSERT INTO `users` (`username`, `password`, `role`) VALUES
-('admin', '$2a$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa', 'admin');
+('admin', '$2b$10$Obm76WAQNikogTY3qOKxi.JZxvRyqvxV/dzR.2GTtUZxzssIi1a5m', 'admin');
 
 
 -- Table structure for table `berita` (used for Tren Fashion)
