@@ -1,7 +1,7 @@
 #1. builder
 
 FROM node:24-alpine AS builder
-#set directory
+#set directorys
 WORKDIR /app
 
 #copy package.json dan package-lock.json

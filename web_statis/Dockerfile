@@ -1,4 +1,4 @@
-# Build stage (optional untuk gzip optimization)
+# Build stage (opsional untuk gzip optimization)
 FROM node:24-alpine AS builder
 WORKDIR /app
 COPY package*.json .
