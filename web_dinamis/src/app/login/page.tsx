@@ -19,11 +19,12 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
     const res = await signIn("credentials", { redirect: false, username, password });
-    if (res?.error) {
+    if (!res || res.error) {
       setError("Username atau password salah.");
       setLoading(false);
     } else {
       router.push("/admin");
+      router.refresh();
     }
   };
 

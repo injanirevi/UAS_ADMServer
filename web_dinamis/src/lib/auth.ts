@@ -1,14 +1,13 @@
-import type { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { query } from "./db";
 
-export const authOptions: NextAuthOptions = {
+export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
-    CredentialsProvider({
-      name: "Credentials",
+    Credentials({
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "admin" },
+        username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
@@ -19,14 +18,14 @@ export const authOptions: NextAuthOptions = {
         try {
           const rows = await query<any>(
             "SELECT id, username, password, role FROM users WHERE username = ?",
-            [credentials.username]
+            [credentials.username as string]
           );
 
           const user = rows[0];
 
           if (user) {
             const isPasswordValid = await bcrypt.compare(
-              credentials.password,
+              credentials.password as string,
               user.password
             );
 
@@ -49,15 +48,13 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        // @ts-ignore
-        token.role = user.role;
+        token.role = (user as any).role;
       }
       return token;
     },
     async session({ session, token }) {
       if (session.user) {
-        // @ts-ignore
-        session.user.role = token.role;
+        (session.user as any).role = token.role;
       }
       return session;
     },
@@ -68,5 +65,4 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET || "your-super-secret-key-1234",
-};
+});

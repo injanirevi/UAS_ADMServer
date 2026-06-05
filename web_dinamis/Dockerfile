@@ -1,36 +1,32 @@
-#1. builder
-
+# Stage 1: Builder
 FROM node:24-alpine AS builder
-#set directorys
+
 WORKDIR /app
 
-#copy package.json dan package-lock.json
-COPY package*.json .
+COPY package*.json ./
 
-#install depedencies
 RUN npm install
 
-#copy source code
-COPY . . 
+COPY . .
 
-#build next js
 RUN npm run build
 
-#2. RUNNER
-
+# Stage 2: Runner
 FROM node:24-alpine AS runner
 
-#set directory
 WORKDIR /app
 
-#environment variables for Next.js
 ENV NODE_ENV=production
 
-#copy build file from builder
-COPY --from=builder /app/.next/standalone ./.next/standalone
+# Copy standalone build (includes server.js, node_modules, public, .next/static via postbuild)
+COPY --from=builder /app/.next/standalone ./
+
+# Copy static assets
 COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./.next/public
+
+# Copy public folder to correct location for standalone server
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 
-CMD ["node", ".next/standalone/server.js"]
+CMD ["node", "server.js"]

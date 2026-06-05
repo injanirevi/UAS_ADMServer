@@ -40,7 +40,7 @@ services:
       DB_HOST: db-webdinamis
       AUTH_TRUST_HOST: "true"
       NEXTAUTH_SECRET: adm-serv-web-bebas-saja-32-karakter
-      NEXTAUTH_URL: http://13.239.35.21:3000
+      NEXTAUTH_URL: http://54.169.4.178:3000
     depends_on:
       db-webdinamis:
         condition: service_healthy
