@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "web-statis/**"
+      - "web_statis/**"
       - "docker-compose.yml"
 
 jobs:
