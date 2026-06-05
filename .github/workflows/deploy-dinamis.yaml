@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "web-dinamis/**"
+      - "web_dinamis/**"
       - "docker-compose.yml"
 
 jobs:
