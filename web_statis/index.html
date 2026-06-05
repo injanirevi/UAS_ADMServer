@@ -37,7 +37,8 @@ body {
     text-align: center;
 }
 
-.left img {
+.left img,
+.left svg {
     width: 130px;
     height: 130px;
     border-radius: 50%;
@@ -125,7 +126,20 @@ footer {
 
     <!-- LEFT -->
     <div class="left">
-        <img src="rere.jpg" alt="Foto Revi Injani">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Foto Revi Injani">
+            <defs>
+                <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0f172a"/>
+                    <stop offset="100%" stop-color="#1e293b"/>
+                </linearGradient>
+            </defs>
+            <rect width="260" height="260" rx="30" fill="url(#g)"/>
+            <circle cx="130" cy="100" r="52" fill="#111827" stroke="#ef4444" stroke-width="8"/>
+            <path d="M130 60c18 0 32 14 32 32s-14 32-32 32-32-14-32-32 14-32 32-32z" fill="#f8fafc"/>
+            <path d="M94 146c0-20 18-36 36-36s36 16 36 36v12c0 6.6-5.4 12-12 12h-48c-6.6 0-12-5.4-12-12v-12z" fill="#f8fafc" opacity="0.9"/>
+            <rect x="70" y="176" width="120" height="12" rx="6" fill="#cbd5e1"/>
+            <rect x="90" y="198" width="80" height="12" rx="6" fill="#cbd5e1"/>
+        </svg>
         <h2>Revi Injani</h2>
         <p>NIM: 2388010009</p>
 

@@ -1,7 +1,7 @@
--- Database: fashion_db
+-- Database: dbcompro_2388010027
 
-CREATE DATABASE IF NOT EXISTS fashion_db;
-USE fashion_db;
+CREATE DATABASE IF NOT EXISTS dbcompro_2388010027;
+USE dbcompro_2388010027;
 
 -- Table structure for table `users`
 CREATE TABLE IF NOT EXISTS `users` (

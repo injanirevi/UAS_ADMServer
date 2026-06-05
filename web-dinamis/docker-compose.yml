@@ -11,7 +11,7 @@ services:
       MARIADB_PASSWORD: 3nS]9gnbU[nBP[Gw
     volumes:
       - db_data:/var/lib/mysql
-      - ./db_data/dbcompro_2388010027.sql:/docker-entrypoint-initdb.d/dbcompro_2388010027.sql:ro
+      - ./db_data/fashion_db.sql:/docker-entrypoint-initdb.d/dbcompro_2388010027.sql:ro
     restart: always
     
 
