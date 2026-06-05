@@ -40,8 +40,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             }
           }
           return null;
-        } catch (error) {
-          console.error("Auth error:", error);
+        } catch (error: any) {
+          console.error("=== AUTH ERROR ===", {
+            message: error?.message,
+            code: error?.code,
+            errno: error?.errno,
+            sqlState: error?.sqlState,
+            DB_HOST: process.env.DB_HOST,
+            DB_USER: process.env.DB_USER,
+            DB_NAME: process.env.DB_NAME,
+            DB_PORT: process.env.DB_PORT,
+          });
           return null;
         }
       },
