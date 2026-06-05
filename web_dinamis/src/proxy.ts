@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import { authConfig } from "@/lib/auth.config";
 
-// Middleware pakai authConfig yang edge-safe (tanpa mysql2/bcryptjs)
-export const { auth: middleware } = NextAuth(authConfig);
+// Next.js 16: middleware.ts diganti proxy.ts
+export const { auth: proxy } = NextAuth(authConfig);
 
 export const config = { matcher: ["/admin", "/admin/:path*"] };
