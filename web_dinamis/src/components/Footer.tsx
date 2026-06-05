@@ -32,8 +32,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2026 Injani's Fashion Industries. Semua hak dilindungi undang-undang.</p>
-        <p className="footer-credit">Project by Moh Firdaus</p>
+        <p>&copy; 2026 Injani's Fashion</p>
+        <p className="footer-credit">Project by Revi Injani</p>
       </div>
     </footer>
   );

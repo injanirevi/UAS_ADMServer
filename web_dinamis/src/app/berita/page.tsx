@@ -21,10 +21,10 @@ export default async function BeritaIndexPage() {
     <section>
       <div style={{ paddingBottom: "2rem", textAlign: "center" }}>
         <h1 className="section-title">
-          Ruang <span className="text-gradient">Berita</span>
+          Ruang <span className="text-gradient">Tren</span>
         </h1>
         <p className="section-subtitle">
-          Informasi, pembaruan, dan wawasan terkini dari DigiTech
+          Informasi, pembaruan, dan wawasan terkini dari Injani's Fashion
         </p>
       </div>
 

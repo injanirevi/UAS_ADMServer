@@ -11,7 +11,7 @@ export default async function AdminDashboard() {
 
   const stats = [
     { name: "Total Layanan", value: layananCount[0]?.total ?? 0, href: "/admin/layanan", color: "#7c3aed", bg: "#f5f3ff", border: "#ede9fe" },
-    { name: "Total Berita", value: beritaCount[0]?.total ?? 0, href: "/admin/berita", color: "#2563eb", bg: "#eff6ff", border: "#bfdbfe" },
+    { name: "Total Tren", value: beritaCount[0]?.total ?? 0, href: "/admin/berita", color: "#2563eb", bg: "#eff6ff", border: "#bfdbfe" },
     { name: "Pesan Belum Dibaca", value: unreadKontak[0]?.total ?? 0, href: "/admin/kontak", color: "#0891b2", bg: "#ecfeff", border: "#a5f3fc" },
     { name: "Total Pesan Masuk", value: totalKontak[0]?.total ?? 0, href: "/admin/kontak", color: "#059669", bg: "#f0fdf4", border: "#bbf7d0" },
   ];
@@ -30,7 +30,7 @@ export default async function AdminDashboard() {
           Selamat Datang 👋
         </h2>
         <p style={{ color: "#64748b", fontSize: "14px" }}>
-          Berikut adalah ringkasan konten website DigiTech Anda.
+          Berikut adalah ringkasan Injani's Fashion.
         </p>
       </div>
 
