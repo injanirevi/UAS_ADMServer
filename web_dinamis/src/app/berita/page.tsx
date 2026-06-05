@@ -24,7 +24,7 @@ export default async function BeritaIndexPage() {
           Ruang <span className="text-gradient">Tren</span>
         </h1>
         <p className="section-subtitle">
-          Informasi, pembaruan, dan wawasan terkini dari Injani's Fashion
+          Informasi dan pembaruan terkini dari Injani's Fashion
         </p>
       </div>
 
