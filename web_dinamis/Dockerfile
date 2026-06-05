@@ -18,14 +18,17 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Copy standalone build (includes server.js, node_modules, public, .next/static via postbuild)
+# Copy standalone build
 COPY --from=builder /app/.next/standalone ./
 
 # Copy static assets
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copy public folder to correct location for standalone server
+# Copy public folder
 COPY --from=builder /app/public ./public
+
+# Copy node_modules yang dibutuhkan untuk runtime (bcryptjs, mysql2, dll)
+COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 3000
 

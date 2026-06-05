@@ -3,7 +3,7 @@ services:
   db-webdinamis:
     image: mariadb:lts
     environment:
-      MARIADB_ROOT_PASSWORD: Admin@941970
+      MARIADB_ROOT_PASSWORD: Admin@9419708
       MARIADB_DATABASE: dbcompro_2388010009
       MARIADB_USER: userwebdinamis_2388010009
       MARIADB_PASSWORD: usrcompro_2388010009
