@@ -1,7 +1,7 @@
 -- Database: dbcompro_2388010027
 
-CREATE DATABASE IF NOT EXISTS dbcompro_2388010027;
-USE dbcompro_2388010027;
+CREATE DATABASE IF NOT EXISTS dbcompro_2388010009;
+USE dbcompro_2388010009;
 
 -- Table structure for table `users`
 CREATE TABLE IF NOT EXISTS `users` (
