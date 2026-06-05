@@ -24,9 +24,9 @@ jobs:
       - name: Build & Push image statis
         uses: docker/build-push-action@v5
         with:
-          context: ./web-statis
+          context: ./web_statis
           push: true
-          tags: faqih703/uas_statis:latest
+          tags: reviinjani/uas_statis_2388010009:latest
       
       - name: Copy docker-compose ke EC2
         uses: appleboy/scp-action@v0.1.7
@@ -40,9 +40,9 @@ jobs:
       - name: Deploy ke AWS EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.AWS_HOST }}
+          host: ${{ secrets.AWS_EC2_HOST }}
           username: ${{ secrets.AWS_USERNAME }}
-          key: ${{ secrets.AWS_PRIVATE_KEY }}
+          key: ${{ secrets.AWS_EC2_KEY }}
           script: |
             cd /home/ubuntu/docker-aws
             docker compose pull container-statis
