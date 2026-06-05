@@ -30,7 +30,7 @@ export default async function BeritaIndexPage() {
 
       <div className="berita-grid" style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {rows.length === 0 && (
-          <p style={{ textAlign: "center", gridColumn: "1/-1" }}>Tidak ada berita saat ini.</p>
+          <p style={{ textAlign: "center", gridColumn: "1/-1" }}>Tidak ada tren.</p>
         )}
         
         {rows.map((item, i) => (
