@@ -27,7 +27,7 @@ export default async function KontakAdminPage() {
           <div className="admin-page-title">Pesan Masuk</div>
           <div className="admin-page-subtitle">
             {unread > 0
-              ? <span><strong style={{ color: "#2563eb" }}>{unread} pesan baru</strong> belum dibaca dari {kontak.length} total pesan</span>
+              ? <span><strong style={{ color: "#2563eb" }}>{unread} Pesan Terbaru</strong> belum dibaca dari {kontak.length} total pesan</span>
               : `${kontak.length} pesan — semua sudah dibaca`
             }
           </div>
