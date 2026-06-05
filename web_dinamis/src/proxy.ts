@@ -1,7 +1,11 @@
 import NextAuth from "next-auth";
 import { authConfig } from "@/lib/auth.config";
+import type { NextRequest } from "next/server";
 
-// Next.js 16: middleware.ts diganti proxy.ts
-export const { auth: proxy } = NextAuth(authConfig);
+const { auth } = NextAuth(authConfig);
+
+export async function proxy(request: NextRequest) {
+  return auth(request as any);
+}
 
 export const config = { matcher: ["/admin", "/admin/:path*"] };
