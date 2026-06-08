@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <Link href="/" className="logo">
-        Injani's Fashion - 2388010009
+        Injani's Fashion
       </Link>
 
       {/* Desktop */}
