@@ -34,7 +34,7 @@ export default async function BeritaAdminPage() {
           <div className="admin-page-subtitle">Kelola artikel dan tren fashion terkini ({berita.length} total)</div>
         </div>
         <Link href="/admin/berita/create" className="admin-btn admin-btn-primary">
-          <PlusIcon /> Tambah Tren Baru
+          <PlusIcon /> Add New Trend
         </Link>
       </div>
 
